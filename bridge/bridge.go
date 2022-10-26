@@ -1,11 +1,11 @@
-//桥接模式
+// 桥接模式
 package bridge
 
 import "fmt"
 
 //意图：将抽象部分与实现部分分离，使它们都可以独立的变化
 
-//解决:通过桥接模式，是抽象和实现之间建立一个关联关系
+//解决:通过桥接模式，在抽象和实现之间建立一个关联关系
 
 //实例:有抽象的消息和消息的实现
 
@@ -23,17 +23,17 @@ import "fmt"
 //桥接是先有桥，才有两端的东西,分离抽象化和实现，使两者的接口可以不同，目的是分离
 //适配是先有两边的东西，才有适配器,改变已有的两个接口，让他们相容
 
-//抽象的消息接口
+// 抽象的消息接口
 type MessageAbstract interface {
 	SendMessage(text, to string)
 }
 
-//实现的消息接口
+// 实现的消息接口
 type MessageImplementer interface {
 	Send(text, to string)
 }
 
-//SMS消息
+// SMS消息
 type MessageSMS struct{}
 
 func (m *MessageSMS) Send(text, to string) {
@@ -43,7 +43,7 @@ func ViaSMS() MessageImplementer {
 	return &MessageSMS{}
 }
 
-//Email消息
+// Email消息
 type MessageEmail struct{}
 
 func ViaEmail() MessageImplementer {
@@ -54,7 +54,7 @@ func (*MessageEmail) Send(text, to string) {
 	fmt.Printf("send %s to %s via Email", text, to)
 }
 
-//抽象的实现
+// 抽象的实现
 type CommonMessage struct {
 	method MessageImplementer
 }
@@ -66,7 +66,7 @@ func NewCommonMessage(method MessageImplementer) *CommonMessage {
 }
 
 func (m *CommonMessage) SendMessage(text, to string) {
-	m.method.Send(text, to)
+	m.method.Send(fmt.Sprintf("[Common] %s", text), to)
 }
 
 type UrgencyMessage struct {
