@@ -1,6 +1,6 @@
 package adapter
 
-import "github.com/xiaomeng79/go-design-pattern/adapter/plug"
+import "adapter/plug"
 
 func ExampleToCharge() {
 	c1 := plug.TwoPlug{}
