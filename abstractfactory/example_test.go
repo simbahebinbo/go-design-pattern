@@ -3,10 +3,10 @@ package abstractfactory
 func ExampleDellFactory_CreateMouse() {
 	df := new(DellFactory)
 	df.CreateMouse()
-	df.CreateKeybo()
+	df.CreateKeyBoard()
 	df.Mouse.SayMouseBrand()
-	df.Keybo.SayKeyBoBrand()
+	df.KeyBoard.SayKeyBoardBrand()
 	//OutPut:
 	//Hp Mouse
-	//Dell Keybo
+	//Dell KeyBoard
 }

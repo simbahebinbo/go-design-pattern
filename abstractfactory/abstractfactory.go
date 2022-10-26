@@ -1,4 +1,4 @@
-//抽象工厂模式
+// 抽象工厂模式
 package abstractfactory
 
 import "fmt"
@@ -10,74 +10,74 @@ import "fmt"
 
 //实例:PC厂商是一个抽象工厂，是鼠标和键盘的组合，鼠标和键盘又是不同的工厂生产，抽象工厂就是将不同工厂生产的产品关联起来
 
-//鼠标接口
+// 鼠标接口
 type IMouse interface {
 	SayMouseBrand()
 }
 
-//戴尔鼠标
+// 戴尔鼠标
 type DellMouse struct{}
 
 func (d DellMouse) SayMouseBrand() {
 	fmt.Println("Dell Mouse")
 }
 
-//惠普鼠标
+// 惠普鼠标
 type HpMouse struct{}
 
 func (h HpMouse) SayMouseBrand() {
 	fmt.Println("Hp Mouse")
 }
 
-//键盘接口
-type IKeybo interface {
-	SayKeyBoBrand()
+// 键盘接口
+type IKeyBoard interface {
+	SayKeyBoardBrand()
 }
 
-//戴尔键盘
-type DellKeybo struct{}
+// 戴尔键盘
+type DellKeyBoard struct{}
 
-func (d DellKeybo) SayKeyBoBrand() {
-	fmt.Println("Dell Keybo")
+func (d DellKeyBoard) SayKeyBoardBrand() {
+	fmt.Println("Dell KeyBoard")
 }
 
-//惠普键盘
-type HpKeybo struct{}
+// 惠普键盘
+type HpKeyBoard struct{}
 
-func (h HpKeybo) SayKeyBoBrand() {
-	fmt.Println("Hp Keybo")
+func (h HpKeyBoard) SayKeyBoardBrand() {
+	fmt.Println("Hp KeyBoard")
 }
 
-//抽象工厂
+// 抽象工厂
 type IPcFactory interface {
-	CreateMouse() //创建鼠标
-	CreateKeybo() //创建键盘
+	CreateMouse()    //创建鼠标
+	CreateKeyBoard() //创建键盘
 }
 
-//惠普工厂，惠普鼠标 + 戴尔键盘
+// 惠普工厂，惠普鼠标 + 戴尔键盘
 type HpFactory struct {
-	Mouse IMouse
-	Keybo IKeybo
+	Mouse    IMouse
+	KeyBoard IKeyBoard
 }
 
 func (h *HpFactory) CreateMouse() {
 	h.Mouse = HpMouse{}
 }
 
-func (h *HpFactory) CreateKeybo() {
-	h.Keybo = DellKeybo{}
+func (h *HpFactory) CreateKeyBoard() {
+	h.KeyBoard = DellKeyBoard{}
 }
 
-//戴尔工厂 戴尔鼠标 + 戴尔键盘
+// 戴尔工厂 戴尔鼠标 + 戴尔键盘
 type DellFactory struct {
-	Mouse IMouse
-	Keybo IKeybo
+	Mouse    IMouse
+	KeyBoard IKeyBoard
 }
 
 func (d *DellFactory) CreateMouse() {
 	d.Mouse = HpMouse{}
 }
 
-func (d *DellFactory) CreateKeybo() {
-	d.Keybo = DellKeybo{}
+func (d *DellFactory) CreateKeyBoard() {
+	d.KeyBoard = DellKeyBoard{}
 }
