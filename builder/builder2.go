@@ -1,4 +1,4 @@
-//建造者模式
+// 建造者模式
 package builder
 
 //意图：将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示
@@ -13,7 +13,7 @@ type Item interface {
 	Price() float32
 }
 
-//锁
+// 锁
 type Lock struct {
 }
 
@@ -24,7 +24,7 @@ func (Lock) Price() float32 {
 	return 22.22
 }
 
-//把手
+// 把手
 type Handle struct {
 }
 
@@ -35,7 +35,7 @@ func (Handle) Price() float32 {
 	return 11.11
 }
 
-//门
+// 门
 type Door struct {
 }
 
@@ -48,25 +48,25 @@ func (Door) Price() float32 {
 
 type BigDoor []Item
 
-func (this *BigDoor) AddItem(item ...Item) {
-	*this = append(*this, item...)
+func (bd *BigDoor) AddItem(item ...Item) {
+	*bd = append(*bd, item...)
 }
 
-func (this BigDoor) GetCost() (cost float32) {
-	for _, v := range this {
+func (bd BigDoor) GetCost() (cost float32) {
+	for _, v := range bd {
 		cost += v.Price()
 	}
 	return
 }
 
-func (this BigDoor) ShowItems() (msg string) {
-	for _, v := range this {
+func (bd BigDoor) ShowItems() (msg string) {
+	for _, v := range bd {
 		msg += "  组件:" + v.Name()
 	}
 	return
 }
 
-//建造
+// 建造
 type DoorBuilder struct {
 }
 

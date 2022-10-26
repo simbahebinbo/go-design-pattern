@@ -2,9 +2,9 @@ package builder
 
 import "testing"
 
-func TestBuilder_Build(t *testing.T) {
+func TestHouseBuilder_Build(t *testing.T) {
 	house := &House{}
-	builderHouse := &Builder{house: house}
-	h := builderHouse.Color("red").Area(60.45).Material("wood").Build()
+	houseBuilder := &Builder{house: house}
+	h := houseBuilder.Color("red").Area(60.45).Material("wood").Build()
 	t.Logf("%+v\n", h)
 }

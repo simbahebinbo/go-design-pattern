@@ -7,45 +7,7 @@ package builder
 
 //实例:建造一个房子,都需要，不同材料搭建，涂颜色，建设面积不同，但都需要这3个属性
 
-import ()
-
-//建造一个房子
-
-//房子颜色
-//type Color uint32
-//var (
-//	ErrorNoColor = errors.New("no this color")
-//)
-//const (
-//	Blue Color = iota
-//	Red
-//	Green
-//)
-//func (color Color) String() string {
-//	switch color {
-//	case Blue:
-//		return "blue"
-//	case Red:
-//		return "red"
-//	case Green:
-//		return "green"
-//	}
-//	return "unknown"
-//}
-//
-//func ParseColor(color string) (Color,error) {
-//	switch strings.ToLower(color) {
-//	case "blue":
-//		return Blue,nil
-//	case "red":
-//		return Red,nil
-//	case "green":
-//		return Green,nil
-//	}
-//	var c Color
-//	return c,ErrorNoColor
-//}
-//可以随便输入参数的链式调用
+// 可以随便输入参数的链式调用
 type IHouse interface {
 	Color(string)    //房子颜色
 	Material(string) //房子材料
