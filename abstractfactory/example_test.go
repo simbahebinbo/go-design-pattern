@@ -1,6 +1,8 @@
 package abstractfactory
 
-func ExampleDellFactory_CreateMouse() {
+import "testing"
+
+func TestExampleDellFactory_CreateMouse(t *testing.T) {
 	df := new(DellFactory)
 	df.CreateMouse()
 	df.CreateKeyBoard()

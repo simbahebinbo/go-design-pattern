@@ -9,6 +9,6 @@ type ThreePlugAdapter struct {
 }
 
 // 实现充电接口，不需要关心2孔插头内部的实现
-func (this ThreePlugAdapter) Charge() {
-	this.ThreePlug.ThreePlugCharge()
+func (pd ThreePlugAdapter) Charge() {
+	pd.ThreePlug.ThreePlugCharge()
 }

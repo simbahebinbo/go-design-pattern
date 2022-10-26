@@ -8,6 +8,6 @@ type ThreePlug struct {
 }
 
 // 充电方法，未实现充电接口
-func (this ThreePlug) ThreePlugCharge() {
+func (p ThreePlug) ThreePlugCharge() {
 	fmt.Println("我是3孔插头，我使用方法：ThreePlugCharge充电")
 }

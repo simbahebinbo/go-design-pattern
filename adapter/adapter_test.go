@@ -1,8 +1,11 @@
 package adapter
 
-import "adapter/plug"
+import (
+	"adapter/plug"
+	"testing"
+)
 
-func ExampleToCharge() {
+func TestExampleToCharge(t *testing.T) {
 	c1 := plug.TwoPlug{}
 	c2 := plug.ThreePlugAdapter{}
 	ToCharge(c1)
