@@ -1,4 +1,4 @@
-//工厂方法模式
+// 工厂方法模式
 package factorymethod
 
 import "fmt"
@@ -10,38 +10,38 @@ import "fmt"
 
 //实例:实现一个鼠标工厂的实现的接口，不同品牌的鼠标工厂实现它
 
-//鼠标接口
+// 鼠标接口
 type IMouse interface {
 	SayMouseBrand()
 }
 
-//戴尔鼠标
+// 戴尔鼠标
 type DellMouse struct{}
 
 func (d DellMouse) SayMouseBrand() {
 	fmt.Println("Dell Mouse")
 }
 
-//惠普鼠标
+// 惠普鼠标
 type HpMouse struct{}
 
 func (h HpMouse) SayMouseBrand() {
 	fmt.Println("Hp Mouse")
 }
 
-//鼠标工厂接口
+// 鼠标工厂接口
 type IMouseFactory interface {
 	Create() IMouse
 }
 
-//戴尔鼠标工厂实现
+// 戴尔鼠标工厂实现
 type DellMouseFactory struct{}
 
 func (d DellMouseFactory) Create() IMouse {
 	return DellMouse{}
 }
 
-//惠普鼠标工厂
+// 惠普鼠标工厂
 type HpMouseFactory struct{}
 
 func (h HpMouseFactory) Create() IMouse {

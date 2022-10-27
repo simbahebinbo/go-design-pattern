@@ -1,6 +1,8 @@
 package factorymethod
 
-func ExampleDellMouseFactory_Create() {
+import "testing"
+
+func TestExampleDellMouseFactory_Create(t *testing.T) {
 	var dmf DellMouseFactory
 	dm := dmf.Create()
 	dm.SayMouseBrand()
@@ -8,7 +10,7 @@ func ExampleDellMouseFactory_Create() {
 	//Dell Mouse
 }
 
-func ExampleHpMouseFactory_Create() {
+func TestExampleHpMouseFactory_Create(t *testing.T) {
 	var hmf HpMouseFactory
 	hm := hmf.Create()
 	hm.SayMouseBrand()
