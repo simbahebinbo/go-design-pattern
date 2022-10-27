@@ -1,7 +1,5 @@
-//代理模式
+// 代理模式
 package proxy
-
-import "github.com/xiaomeng79/go-design-pattern/proxy/readfile"
 
 //意图：为其他对象提供一种代理以控制对这个对象的访问
 //解决:想在访问一个类时做一些[安全]控制或者直接访问对象很麻烦
@@ -32,6 +30,6 @@ func (r ReadFileProxy) ReadFileContext(name, filename string) string {
 		return "无权查看"
 	}
 	//代理去调用读文件接口读取
-	read := readfile.ReadFile{}
+	read := ReadFile{}
 	return read.ReadFile(filename)
 }
