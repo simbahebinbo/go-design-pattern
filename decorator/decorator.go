@@ -1,4 +1,4 @@
-//装饰器模式
+// 装饰器模式
 package decorator
 
 //意图：动态地给一个对象添加一些额外的职责,不改变对象的主要功能
@@ -6,13 +6,13 @@ package decorator
 
 //实例:对蛋糕进行包装，包装：普通包装，塑料包装 玻璃包装
 
-//包装
+// 包装
 type IPack interface {
 	Desc() string
 	Price() float32
 }
 
-//普通包装
+// 普通包装
 type Packing struct {
 	name  string
 	price float32
@@ -26,7 +26,7 @@ func (p Packing) Price() float32 {
 	return p.price
 }
 
-//塑料盒包装
+// 塑料盒包装
 type PlasticPack struct {
 	pack  IPack
 	name  string
@@ -40,7 +40,7 @@ func (p PlasticPack) Price() float32 {
 	return p.pack.Price() + p.price
 }
 
-//玻璃盒包装
+// 玻璃盒包装
 type GlassPack struct {
 	pack  IPack
 	name  string

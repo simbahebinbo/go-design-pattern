@@ -1,8 +1,11 @@
 package decorator
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func ExampleBottleMilk_Desc() {
+func TestExampleBottleMilk_Desc(t *testing.T) {
 	p := &Packing{name: "普通蛋糕", price: 10.00}                 //普通蛋糕10元
 	gp := &GlassPack{pack: p, name: "外加玻璃套", price: 2.00}     //加一个玻璃盒子包装加2元
 	pgp := &PlasticPack{pack: gp, name: "外加塑料套", price: 1.00} //加一个塑料盒子包装加1元
