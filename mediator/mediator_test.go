@@ -1,8 +1,10 @@
 package mediator
 
-func ExampleUser_SendMessage() {
+import "testing"
+
+func TestExampleUser_SendMessage(t *testing.T) {
 	//先实例化一个聊天室
-	c := &ChatRoom1{}
+	c := &ChatRoom{}
 	//实例化2个用户
 	u1 := &User{Id: 1}
 	u2 := &User{Id: 2}
