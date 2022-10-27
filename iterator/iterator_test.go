@@ -5,8 +5,9 @@ import "testing"
 func TestExamplePeoplesIterator_Iterator(t *testing.T) {
 	p1 := &Person{"小明01", 16, "足球"}
 	p2 := &Person{"小明02", 17, "篮球，足球"}
+	p3 := &Person{"小明03", 18, "乒乓球"}
 	ps := &Peoples{}
-	ps.Add(p1, p2)
+	ps.Add(p1, p2, p3)
 	pi := ps.CreateIterator()
 	pi.Iterator()
 	//OutPut:
