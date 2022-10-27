@@ -1,6 +1,8 @@
 package state
 
-func ExampleLight_PressSwitch() {
+import "testing"
+
+func TestExampleLight_PressSwitch(t *testing.T) {
 	//初始化灯的状态:开灯状态
 	light := &Light{State: &OpenLightState{}}
 	//按下开关,每次按下开关，改变状态
