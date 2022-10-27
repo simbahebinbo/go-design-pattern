@@ -1,4 +1,4 @@
-package strate
+package strategy
 
 //折扣
 
@@ -7,7 +7,7 @@ type Discount struct {
 	Discount      float64 //折扣
 }
 
-//计算
+// 计算
 func (d *Discount) Compute() float64 {
 	if d.Discount <= 0 {
 		return d.OriginalPrice
