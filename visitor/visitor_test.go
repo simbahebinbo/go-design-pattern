@@ -1,6 +1,8 @@
 package visitor
 
-func ExampleObjectStructure_Accept() {
+import "testing"
+
+func TestExampleObjectStructure_Accept(t *testing.T) {
 	object := ObjectStructure{}
 	object.Attach(&ConcreteElementA{"A"})
 	object.Attach(&ConcreteElementB{"B"})
@@ -20,5 +22,4 @@ func ExampleObjectStructure_Accept() {
 	//OperatorA
 	//B vB
 	//OperatorB
-
 }

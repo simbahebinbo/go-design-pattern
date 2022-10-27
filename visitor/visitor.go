@@ -1,4 +1,4 @@
-//访问者模式
+// 访问者模式
 package visitor
 
 import "fmt"
@@ -76,6 +76,7 @@ func (c *ConcreteElementA) Accept(visitor IVisitor) {
 	}
 	visitor.VisitConcreteElementA(*c)
 }
+
 func (c *ConcreteElementA) OperatorA() {
 	if c == nil {
 		return
@@ -94,6 +95,7 @@ func (c *ConcreteElementB) Accept(visitor IVisitor) {
 	}
 	visitor.VisitConcreteElementB(*c)
 }
+
 func (c *ConcreteElementB) OperatorB() {
 	if c == nil {
 		return
@@ -103,23 +105,23 @@ func (c *ConcreteElementB) OperatorB() {
 
 // 维护元素集合
 type ObjectStructure struct {
-	list []IElement
+	elementList []IElement
 }
 
 func (o *ObjectStructure) Attach(e IElement) {
 	if o == nil || e == nil {
 		return
 	}
-	o.list = append(o.list, e)
+	o.elementList = append(o.elementList, e)
 }
 
 func (o *ObjectStructure) Detach(e IElement) {
 	if o == nil || e == nil {
 		return
 	}
-	for i, val := range o.list {
+	for i, val := range o.elementList {
 		if val == e {
-			o.list = append(o.list[:i], o.list[i+1:]...)
+			o.elementList = append(o.elementList[:i], o.elementList[i+1:]...)
 			break
 		}
 	}
@@ -129,7 +131,7 @@ func (o *ObjectStructure) Accept(v IVisitor) {
 	if o == nil {
 		return
 	}
-	for _, val := range o.list {
+	for _, val := range o.elementList {
 		val.Accept(v)
 	}
 }
