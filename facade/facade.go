@@ -1,4 +1,4 @@
-//外观模式
+// 外观模式
 package facade
 
 import "fmt"
@@ -28,9 +28,10 @@ import "fmt"
 //
 //（2）在开发阶段，子系统可能会因为重构变得越发复杂，此时可以通过外观模式对外提供一个简单的接口，减少系统之间的依赖。
 //
-//（3）在维护一个遗留的大型系统时，可能这个系统已经变得非常难以维护和扩展，此时可以考虑为新系统开发一个Facade类，来提供遗留系统的比较清晰简单的接口，让新系统与Facade类交互。
+//（3）在维护一个遗留的大型系统时，可能这个系统已经变得非常难以维护和扩展，此时可以考虑为新系统开发一个Facade类，
+//     来提供遗留系统的比较清晰简单的接口，让新系统与Facade类交互。
 
-//cpu
+// cpu
 type cpu struct{}
 
 func (c cpu) startup() {
@@ -40,7 +41,7 @@ func (c cpu) shutdown() {
 	fmt.Println("cpu shutdown")
 }
 
-//memory
+// memory
 type memory struct{}
 
 func (m memory) startup() {
@@ -57,7 +58,7 @@ type Computer struct {
 	memory memory
 }
 
-//实例化computer
+// 实例化computer
 func NewComputer() *Computer {
 	return &Computer{cpu: cpu{}, memory: memory{}}
 }

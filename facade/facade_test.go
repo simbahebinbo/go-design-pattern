@@ -1,6 +1,8 @@
 package facade
 
-func ExampleComputer_StartUp() {
+import "testing"
+
+func TestExampleComputer_StartUp(t *testing.T) {
 	c := NewComputer()
 	c.StartUp()
 	//OutPut:
@@ -8,11 +10,10 @@ func ExampleComputer_StartUp() {
 	//memory startup
 }
 
-func ExampleComputer_ShutDown() {
+func TestExampleComputer_ShutDown(t *testing.T) {
 	c := NewComputer()
 	c.ShutDown()
 	//OutPut:
 	//cpu shutdown
-	//membory shutdown
-
+	//memory shutdown
 }
