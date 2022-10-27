@@ -1,4 +1,4 @@
-//选项模式
+// 选项模式
 package options
 
 //意图：通过修改选项，创建出功能不同的实例
@@ -20,28 +20,28 @@ type Options struct {
 	Flag   int       //日志标记
 }
 
-//设置输出
+// 设置输出
 func WithOut(out io.Writer) Option {
 	return func(o *Options) {
 		o.Out = out
 	}
 }
 
-//设置前缀
+// 设置前缀
 func WithPrefix(prefix string) Option {
 	return func(o *Options) {
 		o.Prefix = prefix
 	}
 }
 
-//设置标记
+// 设置标记
 func WithFlag(flag int) Option {
 	return func(o *Options) {
 		o.Flag = flag
 	}
 }
 
-//新建一个日志
+// 新建一个日志
 func NewLog(opts ...Option) *log.Logger {
 	//设置默认选项
 	o := &Options{
