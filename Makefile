@@ -10,8 +10,13 @@ fmt :
 	@gofmt -l -w ./
 
 
+SUBDIRS := $(wildcard */)
 
 .PHONY : test
 test :
 	@echo "测试代码"
-	@go test -v ./...
+	for dir in $(SUBDIRS); do \
+        cd $$dir; \
+        go test -v; \
+        cd ..;\
+	done
