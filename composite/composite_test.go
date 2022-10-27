@@ -1,6 +1,8 @@
 package composite
 
-func ExampleNewRealCompany() {
+import "testing"
+
+func TestExampleNewRealCompany(t *testing.T) {
 	//新建一个总公司
 	root := NewRealCompany("华夏集团")
 	//新建1个部门
@@ -32,5 +34,4 @@ func ExampleNewRealCompany() {
 	//----   财务部
 	//--   华夏集团上海分公司
 	//----   财务部
-
 }
