@@ -1,4 +1,4 @@
-//观察者模式
+// 观察者模式
 package observer
 
 import (
@@ -56,4 +56,3 @@ func (o *eventNotifier) Notify(e Event) {
 		l.OnNotify(e)
 	}
 }
-
