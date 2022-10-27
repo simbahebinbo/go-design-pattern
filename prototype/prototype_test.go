@@ -1,6 +1,8 @@
 package prototype
 
-func ExamplePeople_Clone() {
+import "testing"
+
+func TestExamplePeople_Clone(t *testing.T) {
 	//先实例化一个对象
 	p := new(People)
 	p.SetName("小明")
@@ -14,5 +16,4 @@ func ExamplePeople_Clone() {
 	//小明 在吃饭
 	//小红 在吃饭
 	//小红 在睡觉
-
 }
